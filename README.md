@@ -13,6 +13,10 @@ docker-compose exec app bash
 
 ## REST APIのテスト
 ```
+# ログファイルの作成
+root@094d1915df3c:/workspace# chmod +x entrypoint.sh
+root@094d1915df3c:/workspace# ./entrypoint.sh
+
 root@094d1915df3c:/workspace# nohup python app.py > /output_log/out.log &
 # 別のターミナルでコンテナにアクセスして
 root@094d1915df3c:/workspace#　python unit_test.py
@@ -24,3 +28,6 @@ root@094d1915df3c:/workspace#　curl -X GET "http://127.0.0.1:5000/fib?n=5"
 - dockerを利用してコードの共有が簡単にできるようにした
 - ユニットテストが実行できるようにした
 - ログが残るようにした
+
+## できなかったこと
+- Dockerfileでログファイルを作成すること
