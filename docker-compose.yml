@@ -1,0 +1,27 @@
+version: '3.2'
+services:
+  app:
+    build: .
+    # dockerfile: Dockerfile
+    container_name: 'FOR_speee_REST_API'
+    # devices:
+    #   - /dev/nvidia0
+    working_dir: '/workspace'
+    volumes:
+      - ./:/workspace/
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+    ports:
+      - "127.0.0.1:5000:5000"
+    tty: true
+    networks:
+      - db_network
+
+networks:
+  db_network:
+    external: true
