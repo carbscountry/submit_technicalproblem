@@ -1,6 +1,9 @@
+import logging
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
+# Set up the logging
+logging.basicConfig(filename='/var/log/myapp/app.log', level=logging.INFO)
 
 def fibonacci(n):
     if n <= 1:

@@ -9,6 +9,7 @@ services:
     working_dir: '/workspace'
     volumes:
       - ./:/workspace/
+      - ./logs:/var/log/myapp
     # deploy:
     #   resources:
     #     reservations:

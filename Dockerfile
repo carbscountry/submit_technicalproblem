@@ -39,3 +39,5 @@ RUN eval "$(pyenv init --path)"
 # COPY requirements.txt /workspace/
 RUN python3 -m pip install --upgrade pip && python3 -m pip install Flask
 
+# Create a directory for our logs
+RUN mkdir /var/log/myapp && chmod 777 /var/log/myapp && touch /var/log/myapp/app.log
