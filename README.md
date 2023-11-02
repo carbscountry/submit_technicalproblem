@@ -13,7 +13,7 @@ docker-compose exec app bash
 
 ## REST APIのテスト
 ```
-root@094d1915df3c:/workspace# python app.py
+root@094d1915df3c:/workspace# nohup python app.py > /output_log/out.log &
 # 別のターミナルでコンテナにアクセスして
 root@094d1915df3c:/workspace#　python unit_test.py
 # curlで実行
