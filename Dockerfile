@@ -5,6 +5,9 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 ARG work_dir="/workspace"
 
+# ログを格納するファイル
+RUN mkdir output_log && touch output_log/out.log
+
 # ENV PYTHON_VERSION 3.10.9
 # ENV HOME /root
 # ENV PYTHON_ROOT $HOME/local/python-$PYTHON_VERSION
